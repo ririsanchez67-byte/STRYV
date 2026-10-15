@@ -12,6 +12,16 @@ src-tauri/target/
 # but never commit generated platform scaffolding).
 src-tauri/gen/
 
+# --- Mobile icon sets --------------------------------------------------------
+# `tauri icon` emits Android and iOS icon sets alongside the desktop ones.
+# STRYV is a Windows-only desktop app: there is no src-tauri/gen/, no mobile
+# project, and tauri.conf.json declares no mobile configuration, so these 35
+# files (288 KB) would never be used. They stay on disk (regenerate any time
+# with `npx tauri icon src-tauri/icons/icon.png`) but are not tracked.
+# If a mobile target is ever added, delete these two lines and commit the sets.
+src-tauri/icons/android/
+src-tauri/icons/ios/
+
 # --- Frontend / bundler output ----------------------------------------------
 dist/
 
